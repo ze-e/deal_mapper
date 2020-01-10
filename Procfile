@@ -1,1 +1,1 @@
-web: gunicorn heroku-deal-mapper.wsgi --log-file -
+web: gunicorn djangoproject.wsgi --log-file -
