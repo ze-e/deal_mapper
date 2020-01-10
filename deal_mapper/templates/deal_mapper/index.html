@@ -1,0 +1,19 @@
+{% extends 'deal_mapper/layout.html' %}
+{% block content %}
+<h2 class="center-align red lighten-3">{{title}}</h2>
+    <div id="table" style="width:100%;"align="center">
+<ul class="collection">
+    {% for property in properties %}
+        <div class="collection-item" style="display:inline-block;text-align:center;padding:10px" align="center" height="185" width="260">
+            <a href={{property.property_link}}><img src="{{property.property_image|default_if_none:'No image available'}}" height="185" width="260"align="center"></a></br></br>
+            <h6 class="collection-item-name" align="center" style="overflow-wrap:anywhere;">{{property.property_name}}</h6></br>
+            <div align="center">{{property.property_description|default_if_none:""}}</div></br>
+            <div align="center">{% if property.property_cap_rate %}Cap Rate:{% endif %} {{property.property_cap_rate|default_if_none:"Click link for Cap Rate"}}{% if property.property_cap_rate %}%{% endif %}</div></br>
+            <div align="center">{% if property.property_listing_price %}Listing Price: ${% endif %}{{property.property_listing_price|default_if_none:"Click link for Listing Price"}}</div>
+            <div align="center"><a href='https://www.google.com/maps/search/{{property.property_name}}+{{property.property_description}}'><button>Find on Google Maps</button></a></div>
+            <div align="center"><a href={{property.property_link}}>Source: {{property.property_source}}</a></div>
+        </div>
+    {% endfor %}
+</ul>
+    </div>
+{% endblock %}  
