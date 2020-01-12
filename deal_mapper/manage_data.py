@@ -1,5 +1,7 @@
 import json
+import csv
 from django.utils import timezone
+from django.core import serializers
 from .models import Current_Property
 from .models import Archived_Property
 from .models import DB_Update
@@ -159,6 +161,13 @@ class Manage_Data:
             except Exception as e:
                 print(str(prop) + " failed to transfer to current properties...reason: " + str(e))
                 self.log_text += "\r\n" + str(prop) + "  failed to transfer to current properties...reason: " + str(e)
+
+    #exports data as json
+    def printdb_json(self):
+        data_json = serializers.serialize("json", Current_Property.objects.all())
+        with open('properties.json', 'w') as outfile:
+            json.dump(data_json, outfile)
+        print("printed property data to json")
 
 
     #loads Get_Deals, and also creates our log_text string, which we will log to our state-of-the-art log record
