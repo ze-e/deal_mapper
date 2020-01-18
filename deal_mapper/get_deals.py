@@ -468,7 +468,7 @@ class Get_Deals:
             try:
                 options = webdriver.ChromeOptions()
                 options.add_argument("headless")
-                driver = webdriver.Chrome(chrome_options=options)
+                driver = webdriver.Chrome(DRIVER_FOLDER,chrome_options=options)
             except WebDriverException:
                 print("Webriver exception. Please install Chrome browser with the correct version of Chrome webdriver. View documentation for further instructions.")
                 return None
@@ -480,7 +480,7 @@ class Get_Deals:
             try:
                 options = webdriver.ChromeOptions()
                 options.add_argument("headless")
-                driver = webdriver.Chrome("./chromedriver.exe",chrome_options=options)
+                driver = webdriver.Chrome(DRIVER_FOLDER,chrome_options=options)
             except WebDriverException:
                 print("Webriver exception. Please install Chrome browser with the correct version of Chrome webdriver. View documentation for further instructions.")
                 return None
