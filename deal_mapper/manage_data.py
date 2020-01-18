@@ -26,7 +26,7 @@ class Manage_Data:
         '''
         database = {}
         sources = {
-        'signnn':'https://signnn.com/listings/',
+#        'signnn':'https://signnn.com/listings/',
         'sambazis':'https://www.sambazisretailgroup.com/listings/',
         'themansourgroup':'http://www.themansourgroup.com/query_listingsNEW2.cfm?region=all&viewType=0&division=&sortBy=0&ltr=&priceMin=&priceMax=&CapRateMin=&states=&search=&CapRateMax=',
         'nnndeal':'http://nnndeal.com/nnn-properties-for-sale/',
