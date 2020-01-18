@@ -734,7 +734,7 @@ class Get_Deals:
                 print("error connecting to {}".format(sources["issenbergbritti2"]))
 
         #clean up and return our properties
-        driver.quit()
+        #driver.quit()
         #propertiesJSON = json.dumps(list(properties), cls = DjangoJSONEncoder)
 
         #return properties, propertiesJSON
