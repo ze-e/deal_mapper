@@ -681,15 +681,24 @@ class Get_Deals:
             print("getting properties from signnn...")
             driver = self.selenium_get(sources["signnn"])
             if driver:
-                properties.extend(self.process_signnn(driver))
+                try:
+                    properties.extend(self.process_signnn(driver))
+                except:
+                    print("Couldn't get properties from signnn")
+                    pass
             else:
                 print("error connecting to {}".format(sources["signnn"]))
 
         if "sambazis" in sources:
             print("getting properties from sambazis...")
             response = self.simple_get(sources["sambazis"])
+
             if response:
-                properties.extend(self.process_sambazis(response))
+                try:
+                    properties.extend(self.process_sambazis(response))
+                except:
+                    print("Couldn't get properties from sambazis")
+                    pass
             else:
                 print("error connecting to {}".format(sources["sambazis"]))
 
@@ -697,7 +706,11 @@ class Get_Deals:
             print("getting properties from themansourgroup...")
             response = self.simple_get(sources["themansourgroup"])
             if response:
-                properties.extend(self.process_themansourgroup(response))
+                try:
+                    properties.extend(self.process_themansourgroup(response))
+                except:
+                    print("Couldn't get properties from themansourgroup")
+                    pass
             else:
                 print("error connecting to {}".format(sources["themansourgroup"]))
 
@@ -705,23 +718,36 @@ class Get_Deals:
             print("getting properties from nnndeal...")
             driver = self.selenium_get(sources["nnndeal"])
             if driver:
-                properties.extend(self.process_nnndeal(driver))
+                try:
+                    properties.extend(self.process_nnndeal(driver))
+                except:
+                    print("Couldn't get properties from nnndeal")
+                    pass
             else:
                 print("error connecting to {}".format(sources["nnndeal"]))
 
         if "snydercarlton" in sources:
             print("getting properties from snydercarlton...")
             response = self.simple_get(sources["snydercarlton"])
+
             if response:
-                properties.extend(self.process_snydercarlton(response))
+                try:
+                    properties.extend(self.process_snydercarlton(response))
+                except:
+                    print("Couldn't get properties from snydercarlton")
+                    pass
             else:
-                print("error connecting to {}".format(sources["url"]))
+                print("error connecting to {}".format(sources["snydercarlton"]))
 
         if "issenbergbritti" in sources:
             print("getting properties from issenbergbritti...")
             response = self.simple_get(sources["issenbergbritti"])
             if response:
-                properties.extend(self.process_issenbergbritti(response))
+                try:
+                    properties.extend(self.process_issenbergbritti(response))
+                except:
+                    print("Couldn't get properties from issenbergbritti")
+                    pass
             else:
                 print("error connecting to {}".format(sources["issenbergbritti"]))
 
@@ -729,7 +755,11 @@ class Get_Deals:
             print("getting properties from issenbergbritti2...")
             response = self.simple_get(sources["issenbergbritti2"])
             if response:
-                properties.extend(self.process_issenbergbritti_pg2(response))
+                try:
+                    properties.extend(self.process_issenbergbritti_pg2(response))
+                except:
+                    print("Couldn't get properties from issenbergbritti2")
+                    pass
             else:
                 print("error connecting to {}".format(sources["issenbergbritti2"]))
 

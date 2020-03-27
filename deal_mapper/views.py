@@ -4,10 +4,16 @@ from django.core import serializers
 from .manage_data import *
 
 from .models import Current_Property
-#from django.db.models import Q
 from .forms import SearchForm
 
+from .serializers import Current_Property_Serializer
+from rest_framework import generics
+
 from django.core.serializers.json import DjangoJSONEncoder
+
+class Current_Property_List_Create(generics.ListCreateAPIView):
+    queryset = Current_Property.objects.all()
+    serializer_class = Current_Property_Serializer
 
 # Create your views here.
 def index(request):
